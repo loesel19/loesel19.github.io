@@ -31,6 +31,7 @@ div.gallery img {
 div.desc {
   padding: 15px;
   text-align: center;
+  background-color: linen;
 }
 /* until here */
 </style>  
@@ -43,7 +44,7 @@ div.desc {
     <hr style="border: 2px solid linen;">
     <div>
             <h2 onclick="showAbout()">About Me(click)</h2>
-        <div id="about" style="display: none;">
+        <div id="about" style="display: none; background-color: linen;" >
                 <p2>I am studying computer science at Saginaw Valley State University</p2>
         </div>
         
@@ -139,7 +140,6 @@ div.desc {
               x.style.display = "none";
             }
           }
-        //to here
           function showAbout() {
             var x = document.getElementById("about");
             if (x.style.display === "none") {
@@ -164,6 +164,7 @@ div.desc {
               x.style.display = "none";
             }
           }
+          //to here
           </script>
   </body>
   
