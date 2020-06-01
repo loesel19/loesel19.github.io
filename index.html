@@ -6,10 +6,20 @@
     body{
         padding: 5px;
     }
-p{
+p.heading{
     color:black;
     text-shadow: 1px 0px red;
     font-size: 35px;
+}
+p.description{
+  color: black;
+  font-size: 20px;
+  text-align: center;
+}
+p.textMe{
+  color: black;
+  font-size: 30px;
+  text-align: center;
 }
 /*following code used from w3 schools at https://www.w3schools.com/css/css_image_gallery.asp */
 div.gallery{
@@ -38,22 +48,22 @@ div.desc {
 </head>
   <title>Andrew Loesel</title>
   <body style="background-color:aqua;">
-    <div>
-<p>Welcome to the homepage of Andrew Loesel</p>
+    <div class="container" style="text-align: left;">
+<p class="heading">Welcome to the homepage of Andrew Loesel</p>
     </div>
     <hr style="border: 2px solid linen;">
-    <div>
+    <div class="container">
             <h2 onclick="showAbout()">About Me(click)</h2>
         <div id="about" style="display: none; background-color: linen;" >
-                <p2>I am studying computer science at Saginaw Valley State University</p2>
+                <p class="textMe">I am studying computer science at Saginaw Valley State University</p>
         </div>
         
     </div>
     <hr style="border: 2px solid linen;">
-    <div>
-        <h1>Here are my projects, and class work</h1>
+    <div class="container">
+        <h1>Here are my working projects, and class work</h1>
     </div>
-    <div>
+    <div class="container">
         <button type="button" class="btn btn-secondary" onclick="myFunction()">cis255(Front-End Web Developement)</button> 
         <button type="button" class="btn btn-secondary" onclick="show355()">cis355(Server Side Web Developement)</button>
     </div>
@@ -61,7 +71,7 @@ div.desc {
             
         </div>
     <hr style="border: 2px solid linen;">
-      <div class="row" style="background-color:linen; display: none;" id="cis255">
+      <div class="container" style="background-color:linen; display: none;" id="cis255">
         <div class="col-lg-3 col-sm-12">
               <a href="https://loesel19.github.io/as01/" target="_blank">Assignmnet 1</a>
           </div>
@@ -84,52 +94,53 @@ div.desc {
             <a href="https://loesel19.github.io/as07/" target="_blank">Assignmnet 7</a>
         </div>
       </div>
-      <div class="row" style="background-color:linen; display: none;" id="cis355">
+      <div class="container" style="background-color:linen; display: none;" id="cis355">
             <div class="col-lg-3 col-sm-12">
                     <p2>Coming Soon!</p2>
                 </div>
       </div>
       
-      <div onclick="showPics()"><h1>My favorite photos I have taken(click)</h1></div>
+      <div class="container" onclick="showPics()"><h1>My favorite photos I have taken(click)</h1>
       <hr style="border: 2px solid linen;">
       <div style="display: none;" id="pics">
       <div class="gallery">
           <a target="_blank" href="/photos/fire.jpg">
             <img src="/photos/fire.jpg" alt="Fire" width="600" height="400">
         </a>
-        <div class="desc"><p2>Fire Will and I started. Taken on pixel 3 night mode.</p2></div>
+        <div class="desc"><p class="description">Fire Will and I started. Taken on pixel 3 night mode.</p></div>
       </div>
       <div class="gallery">
             <a target="_blank" href="/photos/moon.jpg">
               <img src="/photos/moon.jpg" alt="Moon" width="600" height="400">
           </a>
-          <div class="desc"><p2>Picture of the moon. Taken on pixel 3 night mode.</p2></div>
+          <div class="desc"><p class="description">Picture of the moon. Taken on pixel 3 night mode.</p></div>
         </div>
         <div class="gallery">
                 <a target="_blank" href="/photos/shadow.jpg">
                   <img src="/photos/shadow.jpg" alt="Shadow" width="600" height="400">
               </a>
-              <div class="desc"><p2>Will's shadow from the moonlight. Taken on pixel 3 night mode.</p2></div>
+              <div class="desc"><p class="description">Will's shadow from the moonlight. Taken on pixel 3 night mode.</p></div>
             </div>
             <div class="gallery">
                     <a target="_blank" href="/photos/bridge.jpg">
                       <img src="/photos/bridge.jpg" alt="Bridge" width="600" height="400">
                   </a>
-                  <div class="desc"><p2>The bridge we were on. Taken on pixel 3 night mode.</p2></div>
+                  <div class="desc"><p class="description">The bridge we were on. Taken on pixel 3 night mode.</p></div>
                 </div>
                 <div class="gallery">
                         <a target="_blank" href="/photos/star.jpg">
                           <img src="/photos/star.jpg" alt="Star" width="600" height="400">
                       </a>
-                      <div class="desc"><p2>Picture of Vega. Taken on pixel 3 night mode.</p2></div>
+                      <div class="desc"><p class="description">Picture of Vega. Taken on pixel 3 night mode.</p></div>
                     </div>
                     <div class="gallery">
                             <a target="_blank" href="/photos/me.jpg">
                               <img src="/photos/me.jpg" alt="Me" width="600" height="400">
                           </a>
-                          <div class="desc"><p2>Picture of myself. Taken on pixel 3.</p2></div>
+                          <div class="desc"><p class="description">Picture of myself. Taken on pixel 3.</p></div>
                         </div>
         </div>
+      </div>
       <script>
             //code used from w3school at https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_toggle_hide_show
           function myFunction() {
@@ -139,6 +150,12 @@ div.desc {
             } else {
               x.style.display = "none";
             }
+            //to here
+            var y = document.getElementById("cis355");
+            if (y.style.display == "block"){
+                show355();
+            }
+            
           }
           function showAbout() {
             var x = document.getElementById("about");
@@ -163,8 +180,12 @@ div.desc {
             } else {
               x.style.display = "none";
             }
+            var y = document.getElementById("cis255");
+            if (y.style.display == "block"){
+                myFunction();
+            }
           }
-          //to here
+          
           </script>
   </body>
   
