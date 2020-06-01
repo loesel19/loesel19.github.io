@@ -72,6 +72,7 @@ div.desc {
         </div>
     <hr style="border: 2px solid linen;">
       <div class="container" style="background-color:linen; display: none;" id="cis255">
+        <p class="textMe">cis255</p>
         <div class="col-lg-3 col-sm-12">
               <a href="https://loesel19.github.io/as01/" target="_blank">Assignmnet 1</a>
           </div>
@@ -95,6 +96,7 @@ div.desc {
         </div>
       </div>
       <div class="container" style="background-color:linen; display: none;" id="cis355">
+        <p class="textMe">cis355</p>
             <div class="col-lg-3 col-sm-12">
                     <p2>Coming Soon!</p2>
                 </div>
@@ -140,49 +142,47 @@ div.desc {
                         </div>
         </div>
       </div>
-    <hr style="border: 2px solid linen;">
+      <hr style="border: 2px solid linen;">
       <script>
             //code used from w3school at https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_toggle_hide_show
-          function myFunction() {
             var x = document.getElementById("cis255");
+            var y = document.getElementById("cis355");
+          function myFunction() {
             if (x.style.display === "none") {
               x.style.display = "block";
+             if (y.style.display == "block"){
+               show355();
+             }
             } else {
               x.style.display = "none";
             }
             //to here
-            var y = document.getElementById("cis355");
-            if (y.style.display == "block"){
-                show355();
-            }
             
           }
           function showAbout() {
-            var x = document.getElementById("about");
-            if (x.style.display === "none") {
-              x.style.display = "block";
+            var z = document.getElementById("about");
+            if (z.style.display === "none") {
+              z.style.display = "block";
             } else {
-              x.style.display = "none";
+              z.style.display = "none";
             }
           }
           function showPics() {
-            var x = document.getElementById("pics");
-            if (x.style.display === "none") {
-              x.style.display = "block";
+            var j = document.getElementById("pics");
+            if (j.style.display === "none") {
+              j.style.display = "block";
             } else {
-              x.style.display = "none";
+              j.style.display = "none";
             }
           }
           function show355() {
-            var x = document.getElementById("cis355");
-            if (x.style.display === "none") {
-              x.style.display = "block";
-            } else {
-              x.style.display = "none";
-            }
-            var y = document.getElementById("cis255");
-            if (y.style.display == "block"){
+            if (y.style.display === "none") {
+              y.style.display = "block";
+              if(x.style.display == "block"){
                 myFunction();
+              }
+            } else {
+              y.style.display = "none";
             }
           }
           
