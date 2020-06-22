@@ -159,21 +159,53 @@ div.desc {
             //code used from w3school at https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_toggle_hide_show
             var x = document.getElementById("cis255");
             var y = document.getElementById("cis355");
+        var b = document.getElementById("BudgeIt");
           function myFunction() {
-            if (x.style.display === "none") {
+            if (x.style.display == "none") {
               x.style.display = "block";
+                          //to here
              if (y.style.display == "block"){
-               show355();
+               y.style.display = "none";
              }
+              if(b.style.display == "block"){
+                b.style.display = "none";
+              }
             } else {
               x.style.display = "none";
             }
-            //to here
             
           }
+        function show355() {
+            if (y.style.display == "none") {
+              y.style.display = "block";
+                          //to here
+             if (x.style.display == "block"){
+               x.style.display = "none";
+             }
+              if(b.style.display == "block"){
+                b.style.display = "none";
+              }
+            } else {
+              y.style.display = "none";
+            }
+          }
+        function BudgeIt(){
+        if (b.style.display == "none") {
+              b.style.display = "block";
+                          //to here
+             if (x.style.display == "block"){
+               x.style.display = "none";
+             }
+              if(y.style.display == "block"){
+                y.style.display = "none";
+              }
+            } else {
+              b.style.display = "none";
+            }
+        }
           function showAbout() {
             var z = document.getElementById("about");
-            if (z.style.display === "none") {
+            if (z.style.display == "none") {
               z.style.display = "block";
             } else {
               z.style.display = "none";
@@ -181,25 +213,12 @@ div.desc {
           }
           function showPics() {
             var j = document.getElementById("pics");
-            if (j.style.display === "none") {
+            if (j.style.display == "none") {
               j.style.display = "block";
             } else {
               j.style.display = "none";
             }
           }
-          function show355() {
-            if (y.style.display === "none") {
-              y.style.display = "block";
-              if(x.style.display == "block"){
-                myFunction();
-              }
-            } else {
-              y.style.display = "none";
-            }
-          }
-        function BudgeIt(){
-        
-        }
           
           </script>
   </body>
